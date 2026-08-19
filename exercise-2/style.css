@@ -1,0 +1,53 @@
+
+*{box-sizing:border-box}
+body{margin:0;background:#e9e9e9;color:#111;font-family:Georgia,"Times New Roman",serif}
+.toolbar{position:sticky;top:0;z-index:20;background:#173f57;color:#fff;padding:10px 16px;font-family:Arial,sans-serif;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.toolbar button,.toolbar select{padding:7px 10px;border:0;border-radius:4px}
+.toolbar button{cursor:pointer;background:#fff;color:#173f57;font-weight:700}
+.toolbar .muted{opacity:.85;font-size:13px}
+.document{width:8.5in;margin:18px auto}
+.page{width:8.5in;min-height:11in;background:#fff;margin:0 auto 18px;padding:.45in .42in .55in;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.2);page-break-after:always}
+.page:last-child{page-break-after:auto}
+.header{display:grid;grid-template-columns:1.05fr 1.05fr 1.2fr;gap:18px;align-items:start;margin-bottom:12px}
+.logo{width:180px;max-height:95px;object-fit:contain;object-position:left center}
+.contact{font-family:Arial,sans-serif;font-size:13px;line-height:1.25}
+.titlebox{font-family:Arial,sans-serif;font-size:20px;line-height:1.15;text-align:left;min-width:0}.report-title{white-space:nowrap}.expense-title{font-size:19px;line-height:1.12}
+.claim{border:2px solid #111;padding:7px 9px;margin-top:8px;display:inline-block;font-size:16px}
+h2{font-size:17px;margin:12px 0 7px}
+h3{font-size:15px;margin:10px 0 5px}
+.intro{font-size:16px;margin:5px 0 14px}
+.blue{color:#244e6d}
+.section{border:2px solid #111;padding:8px 9px;margin:12px 0}
+.section-title{font-size:14px;margin-bottom:7px}
+.grid{display:grid;gap:8px}
+.grid-2{grid-template-columns:1fr 1fr}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.check{display:flex;gap:7px;align-items:flex-start;font-size:15px;line-height:1.15}
+.box{width:16px;height:16px;border:1px solid #222;display:inline-flex;align-items:center;justify-content:center;flex:0 0 16px;font-family:Arial,sans-serif;font-size:14px}
+.box.checked::after{content:"✓";font-weight:bold}
+.inline-field{display:flex;align-items:flex-end;gap:8px;font-size:15px}
+.line{border-bottom:2px solid #222;min-width:130px;height:24px;display:inline-block;color:#244e6d;text-align:center}
+.line.long{min-width:240px}
+.label{font-size:11px;text-align:center;margin-top:2px}
+.textbox{border:2px solid #111;min-height:85px;padding:8px;font-size:15px}
+.bigbox{min-height:112px}
+.rating{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;margin-top:5px}
+.footer{position:absolute;bottom:.22in;left:.42in;right:.42in;display:flex;justify-content:space-between;font:12px Arial,sans-serif}
+.small{font-size:12px}
+.note{font-size:13px;line-height:1.2}
+.table-wrap{overflow:hidden}
+table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px}
+th,td{border:1.5px solid #111;padding:7px 6px;vertical-align:top;word-wrap:break-word}
+th{font-weight:normal;text-align:left}
+td.data{color:#244e6d}
+.total{font-weight:bold;text-align:right;font-family:Arial,sans-serif}
+.signature-text{font-size:13px;line-height:1.35;margin-top:10px}
+@media(max-width:900px){
+ .document,.page{width:100%}.page{min-height:auto;margin-bottom:12px;padding:25px 20px 55px}
+ .header{grid-template-columns:1fr}.footer{position:static;margin-top:30px}
+}
+@media print{
+ body{background:#fff}.toolbar{display:none}.document{margin:0;width:auto}.page{margin:0;box-shadow:none}
+ @page{size:letter;margin:0}
+}
